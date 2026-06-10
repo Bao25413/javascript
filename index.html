@@ -1,1 +1,1140 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags cho GitHub Pages -->
+    <title>Bản Đồ Tương Tác Hệ Sinh Thái JavaScript | GitHub Pages</title>
+    <meta name="description" content="Trang web học tập trực quan tương tác về các khái niệm cốt lõi của JavaScript và các thư viện/khung phát triển phổ biến hiện nay.">
+    <meta name="keywords" content="javascript, js, react, nextjs, angular, vue, jquery, learn javascript, interactive mindmap">
+    <meta name="author" content="GitHub Developer">
 
+    <!-- Open Graph / Facebook (Hiển thị đẹp mắt khi chia sẻ link) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Bản Đồ Tương Tác Hệ Sinh Thái JavaScript">
+    <meta property="og:description" content="Học tập và tra cứu trực quan các khái niệm cốt lõi (Concepts) cùng các thư viện/khung phát triển (Frameworks) của JS.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?auto=format&fit=crop&q=80&w=1200">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Inter & Fira Code -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* Nền tối sang trọng */
+            color: #e2e8f0;
+        }
+        .code-font {
+            font-family: 'Fira Code', monospace;
+        }
+        /* Hiệu ứng hào quang phát sáng (Glow effect) giống ảnh */
+        .glow-green {
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.2);
+        }
+        .glow-green-strong {
+            box-shadow: 0 0 30px rgba(16, 185, 129, 0.45);
+        }
+        /* Tùy chỉnh thanh cuộn */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1e293b;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #475569;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #10b981;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-emerald-500 selection:text-white">
+
+    <!-- Navigation Header -->
+    <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur-md sticky top-0 z-50 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-emerald-500 flex items-center justify-center text-slate-950 font-bold text-xl shadow-lg shadow-emerald-500/20">
+                    JS
+                </div>
+                <span class="text-lg font-bold tracking-tight text-white">Ecosystem Hub</span>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <a href="#mindmap" class="text-sm text-slate-400 hover:text-emerald-400 transition-colors hidden sm:inline-block">Bản Đồ</a>
+                <a href="#explorer" class="text-sm text-slate-400 hover:text-emerald-400 transition-colors hidden sm:inline-block">Khám Phá Chi Tiết</a>
+                <a href="#quiz" class="text-sm text-slate-400 hover:text-emerald-400 transition-colors hidden sm:inline-block">Thử Thách Quiz</a>
+                <span class="h-4 w-px bg-slate-800 hidden sm:inline-block"></span>
+                <!-- Nút liên kết đến GitHub Repository -->
+                <a href="#" class="text-xs bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 px-3.5 py-1.5 rounded-full font-medium transition-all flex items-center space-x-2">
+                    <i class="fa-brands fa-github text-sm"></i>
+                    <span>View on GitHub</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero / Intro -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-6 text-center">
+        <div class="inline-flex items-center space-x-2 bg-emerald-500/10 border border-emerald-500/20 rounded-full px-3 py-1 mb-4 text-xs font-semibold text-emerald-400">
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+            <span>Sẵn sàng cho GitHub Pages</span>
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            Tóm Tắt Hệ Sinh Thái <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-500">JavaScript</span>
+        </h1>
+        <p class="mt-4 text-base sm:text-lg text-slate-400 max-w-2xl mx-auto">
+            Học tập và tra cứu trực quan các khái niệm cốt lõi (Concepts) cùng các thư viện/khung phát triển (Frameworks) phổ biến nhất hiện nay dựa trên sơ đồ hình ảnh <code class="bg-slate-800 text-emerald-400 px-1.5 py-0.5 rounded text-sm font-semibold">image_e247fd.png</code>.
+        </p>
+
+        <!-- Thanh Tìm kiếm nhanh -->
+        <div class="mt-8 max-w-md mx-auto relative">
+            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-500">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <input 
+                type="text" 
+                id="searchInput"
+                oninput="searchEcosystem()"
+                placeholder="Tìm nhanh: DOM, Next, Array, Vue..." 
+                class="w-full pl-10 pr-4 py-3 bg-slate-900 border border-slate-800 rounded-2xl text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all text-sm"
+            >
+            <div id="searchClear" onclick="clearSearch()" class="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer text-slate-500 hover:text-white hidden">
+                <i class="fa-solid fa-circle-xmark"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Mind Map -->
+    <section id="mindmap" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="bg-slate-900/50 border border-slate-800/80 rounded-3xl p-6 sm:p-10 relative overflow-hidden">
+            
+            <div class="text-center mb-8">
+                <span class="text-xs font-semibold tracking-widest text-emerald-400 uppercase">Sơ đồ tương tác trực quan</span>
+                <h2 class="text-xl font-bold text-white mt-1">Bấm vào bất kỳ thẻ nào để xem nhanh chi tiết</h2>
+            </div>
+
+            <!-- Mind Map Layout -->
+            <div class="grid grid-cols-1 lg:grid-cols-11 gap-8 items-center relative">
+                
+                <!-- Left Branch: JS Concepts -->
+                <div class="lg:col-span-4 space-y-3 order-2 lg:order-1">
+                    <div class="bg-emerald-600 text-slate-950 font-bold text-center py-2.5 rounded-xl shadow-lg uppercase tracking-wider text-sm glow-green flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-brain"></i>
+                        <span>JS Concepts</span>
+                    </div>
+                    <div class="space-y-2" id="conceptsList">
+                        <!-- Thẻ khái niệm -->
+                        <button onclick="selectNode('introduction')" id="node-introduction" class="w-full text-left bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-emerald-500/50 p-3.5 rounded-xl transition-all duration-300 flex justify-between items-center group">
+                            <span class="font-medium text-slate-300 group-hover:text-white">Introduction</span>
+                            <i class="fa-solid fa-chevron-right text-slate-600 group-hover:text-emerald-400 group-hover:translate-x-0.5 transition-all text-xs"></i>
+                        </button>
+                        <button onclick="selectNode('function')" id="node-function" class="w-full text-left bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-emerald-500/50 p-3.5 rounded-xl transition-all duration-300 flex justify-between items-center group">
+                            <span class="font-medium text-slate-300 group-hover:text-white">Function (Hàm)</span>
+                            <i class="fa-solid fa-chevron-right text-slate-600 group-hover:text-emerald-400 group-hover:translate-x-0.5 transition-all text-xs"></i>
+                        </button>
+                        <button onclick="selectNode('array')" id="node-array" class="w-full text-left bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-emerald-500/50 p-3.5 rounded-xl transition-all duration-300 flex justify-between items-center group">
+                            <span class="font-medium text-slate-300 group-hover:text-white">Array (Mảng)</span>
+                            <i class="fa-solid fa-chevron-right text-slate-600 group-hover:text-emerald-400 group-hover:translate-x-0.5 transition-all text-xs"></i>
+                        </button>
+                        <button onclick="selectNode('object')" id="node-object" class="w-full text-left bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-emerald-500/50 p-3.5 rounded-xl transition-all duration-300 flex justify-between items-center group">
+                            <span class="font-medium text-slate-300 group-hover:text-white">Object (Đối tượng)</span>
+                            <i class="fa-solid fa-chevron-right text-slate-600 group-hover:text-emerald-400 group-hover:translate-x-0.5 transition-all text-xs"></i>
+                        </button>
+                        <button onclick="selectNode('events')" id="node-events" class="w-full text-left bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-emerald-500/50 p-3.5 rounded-xl transition-all duration-300 flex justify-between items-center group">
+                            <span class="font-medium text-slate-300 group-hover:text-white">Events (Sự kiện)</span>
+                            <i class="fa-solid fa-chevron-right text-slate-600 group-hover:text-emerald-400 group-hover:translate-x-0.5 transition-all text-xs"></i>
+                        </button>
+                        <button onclick="selectNode('dom')" id="node-dom" class="w-full text-left bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-emerald-500/50 p-3.5 rounded-xl transition-all duration-300 flex justify-between items-center group">
+                            <span class="font-medium text-slate-300 group-hover:text-white">DOM (Cây tài liệu)</span>
+                            <i class="fa-solid fa-chevron-right text-slate-600 group-hover:text-emerald-400 group-hover:translate-x-0.5 transition-all text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Center Core Node: JavaScript -->
+                <div class="lg:col-span-3 flex flex-col items-center justify-center py-6 lg:py-0 order-1 lg:order-2">
+                    <div class="hidden lg:block absolute left-[36%] right-[36%] h-0.5 bg-gradient-to-r from-emerald-500 via-green-500 to-emerald-500 -z-10"></div>
+                    
+                    <div class="bg-gradient-to-b from-emerald-500 to-green-600 text-slate-950 font-extrabold px-10 py-5 rounded-3xl shadow-2xl glow-green-strong text-center border-4 border-slate-900 group cursor-pointer transition-all duration-300 transform hover:scale-105 active:scale-95">
+                        <i class="fa-brands fa-js text-4xl block mb-2 text-slate-900"></i>
+                        <span class="text-xl tracking-wider block">JAVASCRIPT</span>
+                        <span class="text-[10px] font-medium tracking-widest text-emerald-950 uppercase opacity-80">Trọng Tâm Hệ Sinh Thái</span>
+                    </div>
+                    
+                    <div class="flex flex-col items-center mt-6 hidden lg:flex">
+                        <div class="h-10 w-0.5 border-l-2 border-dashed border-slate-600"></div>
+                        <i class="fa-solid fa-circle text-[6px] text-slate-600 my-1"></i>
+                        <div class="h-10 w-0.5 border-l-2 border-dashed border-slate-600"></div>
+                        <i class="fa-solid fa-chevron-down text-xs text-slate-500"></i>
+                    </div>
+                </div>
+
+                <!-- Right Branch: JS Frameworks/Libraries -->
+                <div class="lg:col-span-4 space-y-3 order-3">
+                    <div class="bg-emerald-600 text-slate-950 font-bold text-center py-2.5 rounded-xl shadow-lg uppercase tracking-wider text-sm glow-green flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-cubes"></i>
+                        <span>JS Frameworks / Libraries</span>
+                    </div>
+                    <div class="space-y-2" id="frameworksList">
+                        <!-- Thẻ framework -->
+                        <button onclick="selectNode('react')" id="node-react" class="w-full text-left bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-emerald-500/50 p-3.5 rounded-xl transition-all duration-300 flex justify-between items-center group">
+                            <span class="font-medium text-slate-300 group-hover:text-white">React</span>
+                            <i class="fa-solid fa-chevron-right text-slate-600 group-hover:text-emerald-400 group-hover:translate-x-0.5 transition-all text-xs"></i>
+                        </button>
+                        <button onclick="selectNode('next')" id="node-next" class="w-full text-left bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-emerald-500/50 p-3.5 rounded-xl transition-all duration-300 flex justify-between items-center group">
+                            <span class="font-medium text-slate-300 group-hover:text-white">Next.js</span>
+                            <i class="fa-solid fa-chevron-right text-slate-600 group-hover:text-emerald-400 group-hover:translate-x-0.5 transition-all text-xs"></i>
+                        </button>
+                        <button onclick="selectNode('angular')" id="node-angular" class="w-full text-left bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-emerald-500/50 p-3.5 rounded-xl transition-all duration-300 flex justify-between items-center group">
+                            <span class="font-medium text-slate-300 group-hover:text-white">Angular</span>
+                            <i class="fa-solid fa-chevron-right text-slate-600 group-hover:text-emerald-400 group-hover:translate-x-0.5 transition-all text-xs"></i>
+                        </button>
+                        <button onclick="selectNode('vue')" id="node-vue" class="w-full text-left bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-emerald-500/50 p-3.5 rounded-xl transition-all duration-300 flex justify-between items-center group">
+                            <span class="font-medium text-slate-300 group-hover:text-white">Vue.js</span>
+                            <i class="fa-solid fa-chevron-right text-slate-600 group-hover:text-emerald-400 group-hover:translate-x-0.5 transition-all text-xs"></i>
+                        </button>
+                        <button onclick="selectNode('jquery')" id="node-jquery" class="w-full text-left bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-emerald-500/50 p-3.5 rounded-xl transition-all duration-300 flex justify-between items-center group">
+                            <span class="font-medium text-slate-300 group-hover:text-white">jQuery</span>
+                            <i class="fa-solid fa-chevron-right text-slate-600 group-hover:text-emerald-400 group-hover:translate-x-0.5 transition-all text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Explorer Panel -->
+    <section id="explorer" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <!-- Left Panel: Navigation Tabs / Quick List -->
+            <div class="lg:col-span-1 space-y-6">
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4">
+                    <h3 class="text-white font-bold mb-4 text-sm tracking-wide uppercase text-slate-400">Danh sách chọn nhanh</h3>
+                    <div class="flex border-b border-slate-800/60 mb-4">
+                        <button onclick="switchTab('tab-concepts')" id="btn-tab-concepts" class="flex-1 pb-3 text-sm font-semibold text-emerald-400 border-b-2 border-emerald-500">Concepts</button>
+                        <button onclick="switchTab('tab-tools')" id="btn-tab-tools" class="flex-1 pb-3 text-sm font-semibold text-slate-400 hover:text-white border-b-2 border-transparent">Frameworks</button>
+                    </div>
+
+                    <!-- Concepts Quick Select inside Tab -->
+                    <div id="tab-concepts" class="space-y-1">
+                        <button onclick="selectNode('introduction')" class="quick-btn w-full text-left px-3 py-2.5 rounded-lg text-sm transition-colors flex items-center space-x-2.5 text-slate-300 hover:bg-slate-800 hover:text-white" data-node="introduction">
+                            <i class="fa-solid fa-circle-info text-emerald-500/70 text-xs"></i>
+                            <span>Introduction</span>
+                        </button>
+                        <button onclick="selectNode('function')" class="quick-btn w-full text-left px-3 py-2.5 rounded-lg text-sm transition-colors flex items-center space-x-2.5 text-slate-300 hover:bg-slate-800 hover:text-white" data-node="function">
+                            <i class="fa-solid fa-bolt text-emerald-500/70 text-xs"></i>
+                            <span>Function</span>
+                        </button>
+                        <button onclick="selectNode('array')" class="quick-btn w-full text-left px-3 py-2.5 rounded-lg text-sm transition-colors flex items-center space-x-2.5 text-slate-300 hover:bg-slate-800 hover:text-white" data-node="array">
+                            <i class="fa-solid fa-list-ol text-emerald-500/70 text-xs"></i>
+                            <span>Array</span>
+                        </button>
+                        <button onclick="selectNode('object')" class="quick-btn w-full text-left px-3 py-2.5 rounded-lg text-sm transition-colors flex items-center space-x-2.5 text-slate-300 hover:bg-slate-800 hover:text-white" data-node="object">
+                            <i class="fa-solid fa-cubes-stacked text-emerald-500/70 text-xs"></i>
+                            <span>Object</span>
+                        </button>
+                        <button onclick="selectNode('events')" class="quick-btn w-full text-left px-3 py-2.5 rounded-lg text-sm transition-colors flex items-center space-x-2.5 text-slate-300 hover:bg-slate-800 hover:text-white" data-node="events">
+                            <i class="fa-solid fa-bell text-emerald-500/70 text-xs"></i>
+                            <span>Events</span>
+                        </button>
+                        <button onclick="selectNode('dom')" class="quick-btn w-full text-left px-3 py-2.5 rounded-lg text-sm transition-colors flex items-center space-x-2.5 text-slate-300 hover:bg-slate-800 hover:text-white" data-node="dom">
+                            <i class="fa-solid fa-sitemap text-emerald-500/70 text-xs"></i>
+                            <span>DOM (Cây tài liệu)</span>
+                        </button>
+                    </div>
+
+                    <!-- Frameworks Quick Select inside Tab -->
+                    <div id="tab-tools" class="space-y-1 hidden">
+                        <button onclick="selectNode('react')" class="quick-btn w-full text-left px-3 py-2.5 rounded-lg text-sm transition-colors flex items-center space-x-2.5 text-slate-300 hover:bg-slate-800 hover:text-white" data-node="react">
+                            <i class="fa-brands fa-react text-sky-400 text-xs"></i>
+                            <span>React</span>
+                        </button>
+                        <button onclick="selectNode('next')" class="quick-btn w-full text-left px-3 py-2.5 rounded-lg text-sm transition-colors flex items-center space-x-2.5 text-slate-300 hover:bg-slate-800 hover:text-white" data-node="next">
+                            <i class="fa-solid fa-n text-white text-xs"></i>
+                            <span>Next.js</span>
+                        </button>
+                        <button onclick="selectNode('angular')" class="quick-btn w-full text-left px-3 py-2.5 rounded-lg text-sm transition-colors flex items-center space-x-2.5 text-slate-300 hover:bg-slate-800 hover:text-white" data-node="angular">
+                            <i class="fa-brands fa-angular text-red-500 text-xs"></i>
+                            <span>Angular</span>
+                        </button>
+                        <button onclick="selectNode('vue')" class="quick-btn w-full text-left px-3 py-2.5 rounded-lg text-sm transition-colors flex items-center space-x-2.5 text-slate-300 hover:bg-slate-800 hover:text-white" data-node="vue">
+                            <i class="fa-brands fa-vuejs text-emerald-500 text-xs"></i>
+                            <span>Vue.js</span>
+                        </button>
+                        <button onclick="selectNode('jquery')" class="quick-btn w-full text-left px-3 py-2.5 rounded-lg text-sm transition-colors flex items-center space-x-2.5 text-slate-300 hover:bg-slate-800 hover:text-white" data-node="jquery">
+                            <i class="fa-solid fa-code text-blue-400 text-xs"></i>
+                            <span>jQuery</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Info Alert Card -->
+                <div class="bg-slate-900/60 border border-slate-800 p-4 rounded-2xl">
+                    <h4 class="text-sm font-semibold text-white mb-2 flex items-center space-x-2">
+                        <i class="fa-solid fa-lightbulb text-amber-400"></i>
+                        <span>Mẹo học tập nhanh</span>
+                    </h4>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Hãy bắt đầu với cột bên trái (Concepts) để có gốc vững chắc, sau đó học các thư viện và khung phù hợp bên phải để tối ưu hóa quy trình viết ứng dụng.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Right Panel: Dynamic Details View -->
+            <div class="lg:col-span-2">
+                <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl min-h-[500px] flex flex-col justify-between" id="detailsContainer">
+                    <!-- Default State -->
+                    <div id="defaultDetailState" class="flex flex-col items-center justify-center text-center py-20 my-auto">
+                        <div class="w-16 h-16 rounded-full bg-slate-800 flex items-center justify-center mb-4 text-emerald-500 animate-pulse">
+                            <i class="fa-solid fa-arrow-pointer text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white">Chưa chọn thành phần</h3>
+                        <p class="text-sm text-slate-500 mt-2 max-w-sm">
+                            Hãy click chọn một khái niệm hoặc thư viện bất kỳ trên Sơ đồ hoặc Menu Danh sách để hiển thị phân tích chuyên sâu.
+                        </p>
+                    </div>
+
+                    <!-- Dynamic Active State -->
+                    <div id="activeDetailState" class="hidden space-y-6">
+                        <!-- Top Meta Header -->
+                        <div class="flex flex-wrap justify-between items-start gap-4 border-b border-slate-800 pb-5">
+                            <div>
+                                <span id="detailBadge" class="text-[10px] uppercase font-bold tracking-widest bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2.5 py-1 rounded-full">CONCEPTS</span>
+                                <h3 id="detailTitle" class="text-2xl sm:text-3xl font-extrabold text-white mt-2">Introduction</h3>
+                                <p id="detailSubtitle" class="text-xs sm:text-sm text-slate-400 mt-1">Cơ bản về biến, hằng số và kiểu dữ liệu</p>
+                            </div>
+                            <div class="flex items-center space-x-2" id="techStats">
+                                <!-- Stats like complexity / usecase updated by JS -->
+                            </div>
+                        </div>
+
+                        <!-- Main Explanation -->
+                        <div>
+                            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Mô tả chi tiết</h4>
+                            <p id="detailDesc" class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                                Giải thích sẽ được hiển thị tại đây.
+                            </p>
+                        </div>
+
+                        <!-- Core Features/Characteristics -->
+                        <div id="featuresBlock" class="hidden bg-slate-950/40 p-4 rounded-xl border border-slate-800/80">
+                            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Tính năng / Cơ chế cốt lõi</h4>
+                            <ul id="featuresList" class="space-y-2 text-sm text-slate-300">
+                                <!-- Chèn động các đặc điểm -->
+                            </ul>
+                        </div>
+
+                        <!-- Interactive Code / Play Section -->
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center">
+                                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest">Mã nguồn thực tế minh họa</h4>
+                                <div class="flex items-center space-x-2">
+                                    <button onclick="runCurrentCode()" class="text-xs bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold px-3 py-1.5 rounded-lg flex items-center space-x-1.5 transition-all shadow-md active:scale-95">
+                                        <i class="fa-solid fa-play"></i>
+                                        <span>Chạy Code</span>
+                                    </button>
+                                    <button onclick="copyCurrentCode()" class="text-xs text-slate-400 hover:text-emerald-400 flex items-center space-x-1.5 transition-colors px-2 py-1.5 rounded hover:bg-slate-800">
+                                        <i class="fa-regular fa-copy"></i>
+                                        <span>Sao chép</span>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- Simulated Terminal -->
+                            <div class="bg-slate-950 rounded-2xl border border-slate-800/80 overflow-hidden shadow-inner">
+                                <div class="bg-slate-900 px-4 py-2 flex items-center space-x-2 border-b border-slate-800/80">
+                                    <div class="w-3 h-3 rounded-full bg-red-500/70"></div>
+                                    <div class="w-3 h-3 rounded-full bg-amber-500/70"></div>
+                                    <div class="w-3 h-3 rounded-full bg-emerald-500/70"></div>
+                                    <span class="text-[10px] text-slate-500 font-mono pl-2">example.js</span>
+                                </div>
+                                <pre class="p-4 overflow-x-auto"><code id="codeBlock" class="code-font text-emerald-400 text-xs sm:text-sm">const user = "Huỳnh Châu";</code></pre>
+                            </div>
+
+                            <!-- Live Console Output Playground -->
+                            <div id="consoleOutput" class="hidden mt-3 bg-slate-950 rounded-2xl border border-slate-800/80 p-4 font-mono text-xs">
+                                <div class="flex justify-between items-center border-b border-slate-900 pb-2 mb-2 text-[10px] text-slate-500 uppercase tracking-widest">
+                                    <span class="flex items-center space-x-1.5 text-amber-400">
+                                        <i class="fa-solid fa-terminal"></i>
+                                        <span>Kết quả thực thi (Console Output)</span>
+                                    </span>
+                                    <button onclick="clearConsole()" class="hover:text-red-400 transition-colors" title="Xóa màn hình log">
+                                        <i class="fa-solid fa-trash-can"></i>
+                                    </button>
+                                </div>
+                                <pre id="consoleOutputBlock" class="whitespace-pre-wrap text-slate-300 leading-relaxed"></pre>
+                            </div>
+                        </div>
+
+                        <!-- Toast thông báo nhỏ kín đáo khi copy thành công -->
+                        <div id="toast" class="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-stone-900 text-white text-xs px-4 py-2.5 rounded-full shadow-lg opacity-0 pointer-events-none transition-opacity duration-300 z-50">
+                            Đã sao chép code vào bộ nhớ đệm!
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Mini Interactive Quiz Section -->
+    <section id="quiz" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 mb-10">
+        <div class="bg-gradient-to-br from-slate-900 to-slate-950 border border-slate-800 rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+            <!-- Decorative Light Point -->
+            <div class="absolute -top-10 -right-10 w-40 h-40 bg-emerald-500/10 rounded-full blur-3xl"></div>
+
+            <div class="max-w-3xl mx-auto">
+                <div class="text-center mb-8">
+                    <span class="text-xs font-bold text-emerald-400 tracking-widest uppercase bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-full">Mini Game Trắc Nghiệm</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-3">Kiểm tra kiến thức của bạn</h2>
+                    <p class="text-slate-400 text-sm mt-2">Dành ra 2 phút để tự đánh giá xem bạn đã nắm rõ Hệ sinh thái JS chưa nhé!</p>
+                </div>
+
+                <!-- Quiz Box -->
+                <div class="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-6 shadow-inner" id="quizBox">
+                    <!-- Progress bar -->
+                    <div class="w-full bg-slate-800 h-1.5 rounded-full mb-6 overflow-hidden">
+                        <div id="quizProgress" class="bg-emerald-500 h-full w-[25%] transition-all duration-300"></div>
+                    </div>
+
+                    <!-- Question Container -->
+                    <div class="space-y-6">
+                        <div class="flex justify-between items-center">
+                            <span id="questionNum" class="text-xs font-semibold text-slate-500 uppercase tracking-widest">Câu hỏi 1 / 4</span>
+                            <span id="scoreText" class="text-xs font-bold text-emerald-400">Điểm: 0</span>
+                        </div>
+                        <h3 id="questionText" class="text-lg font-bold text-white leading-relaxed">
+                            Khái niệm nào sau đây cho phép JavaScript can thiệp vào cấu trúc hiển thị trang HTML động mà không cần reload trang?
+                        </h3>
+
+                        <!-- Answers Option Grid -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3" id="optionsGrid">
+                            <!-- Options rendered dynamically -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Score / Result Page -->
+                <div class="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-8 text-center hidden" id="resultBox">
+                    <div class="w-20 h-20 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mx-auto mb-4 text-3xl">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white">Chúc mừng bạn đã hoàn thành!</h3>
+                    <p class="text-slate-400 mt-2 text-sm">Kết quả kiểm tra kiến thức Hệ sinh thái JavaScript của bạn:</p>
+                    <div class="text-4xl font-black text-emerald-400 my-4" id="finalScore">4 / 4</div>
+                    <p id="resultMessage" class="text-xs text-slate-500 max-w-md mx-auto mb-6">Học sâu hiểu rộng! Bạn nắm giữ kiến thức nền móng JavaScript cực kỳ chắc chắn.</p>
+                    <button onclick="restartQuiz()" class="px-6 py-2.5 bg-emerald-500 hover:bg-emerald-600 text-slate-950 text-sm font-bold rounded-xl transition-all shadow-lg shadow-emerald-500/20 active:scale-95">
+                        Thử tài lại từ đầu
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-900 py-8 text-center text-xs text-slate-500">
+        <div class="max-w-7xl mx-auto px-4 space-y-3">
+            <p>Học lập trình hiệu quả qua trải nghiệm trực quan hóa dữ liệu.</p>
+            <p class="text-[11px]">&copy; 2026 Bản đồ tương tác JavaScript Ecosystem. Được lưu trữ trên GitHub Pages.</p>
+        </div>
+    </footer>
+
+    <!-- JS Core Logic -->
+    <script>
+        // Dữ liệu chi tiết cho từng nút trong hệ sinh thái
+        const nodesData = {
+            introduction: {
+                title: "Introduction (Cú pháp cơ bản)",
+                badge: "CONCEPTS",
+                subtitle: "Nền móng làm quen ngôn ngữ",
+                desc: "Bước khởi đầu quan trọng để tiếp cận cách thức thực thi mã lệnh của JavaScript. Việc này bao gồm cách đặt biến, phân biệt kiểu dữ liệu và nắm được vòng đời hoạt động cơ bản nhất của dòng mã.",
+                features: [
+                    "<strong>Phân biệt Biến & Phạm vi:</strong> <code>const</code>, <code>let</code> có phạm vi block-scope (ES6), an toàn hơn so với <code>var</code> phạm vi function-scope cũ.",
+                    "<strong>Kiểu dữ liệu nguyên bản (Primitives):</strong> Gồm String, Number, Boolean, Null, Undefined, Symbol, BigInt được truyền trực tiếp bằng giá trị.",
+                    "<strong>Kiểu dữ liệu tham chiếu (Reference):</strong> Gồm Object, Array và Function. Chúng được truyền thông qua địa chỉ bộ nhớ."
+                ],
+                code: `// Khai báo biến hiện đại
+const username = "Huỳnh Châu";
+let age = 22;
+let active = true;
+
+console.log("Tên hiển thị:", username);
+console.log("Tuổi tiếp theo:", age + 1);
+console.log("Loại dữ liệu của 'active':", typeof active);`,
+                difficulty: "Cơ bản",
+                popularity: "Bắt buộc học"
+            },
+            function: {
+                title: "Function (Hàm xử lý)",
+                badge: "CONCEPTS",
+                subtitle: "Khối xử lý logic độc lập",
+                desc: "Hàm là các khối mã có tính tái sử dụng cao, thực thi một khối công việc logic nhất định. Trong JS, hàm vô cùng mạnh mẽ vì chúng được xếp hạng là 'đối tượng ưu tiên bậc nhất' (First-class citizens).",
+                features: [
+                    "<strong>First-Class Functions:</strong> Bạn hoàn toàn có thể gán hàm cho biến, truyền nó như tham số (callback) hoặc trả về hàm từ bên trong hàm khác.",
+                    "<strong>Arrow Function:</strong> Cú pháp viết ngắn gọn bằng ký tự <code>=></code> giúp viết code gọn sạch, đặc biệt không tự ràng buộc ngữ cảnh <code>this</code> riêng."
+                ],
+                code: `// 1. Hàm khai báo truyền thống
+function greeting(user) {
+    return "Xin chào, " + user + "!";
+}
+
+// 2. Arrow function hiện đại
+const doubleValue = (num) => num * 2;
+
+console.log(greeting("Huỳnh Châu"));
+console.log("Kết quả nhân đôi số 12 là:", doubleValue(12));`,
+                difficulty: "Trung bình",
+                popularity: "Rất phổ biến"
+            },
+            array: {
+                title: "Array (Xử lý Mảng)",
+                badge: "CONCEPTS",
+                subtitle: "Quản lý danh sách phần tử",
+                desc: "Mảng trong JavaScript là một cấu trúc dữ liệu tuyến tính, dùng để lưu trữ và lập chỉ mục các danh sách phần tử. Mảng trong JS có khả năng chứa nhiều kiểu dữ liệu khác nhau cùng một lúc.",
+                features: [
+                    "<strong>Các phương thức bậc cao (ES6+):</strong> Thay vì viết các vòng lặp <code>for</code> dài dòng, JS cung cấp <code>.map()</code>, <code>.filter()</code>, <code>.reduce()</code>.",
+                    "<strong>Tính bất biến (Immutability):</strong> Các phương thức xử lý mảng hiện đại luôn hướng đến việc trả về mảng mới để tránh làm ảnh hưởng trực tiếp đến dữ liệu gốc."
+                ],
+                code: `const numbers = [1, 2, 3, 4, 5];
+
+// Sử dụng filter lọc số chẵn
+const evens = numbers.filter(n => n % 2 === 0);
+console.log("Mảng số chẵn lọc được:", evens);
+
+// Sử dụng map để nhân đôi các giá trị
+const doubled = numbers.map(n => n * 2);
+console.log("Mảng sau khi nhân đôi:", doubled);`,
+                difficulty: "Trung bình",
+                popularity: "Cực kỳ cao"
+            },
+            object: {
+                title: "Object (Đối tượng)",
+                badge: "CONCEPTS",
+                subtitle: "Trung tâm quản lý thực thể",
+                desc: "Mọi thứ không phải dữ liệu nguyên bản trong JS đều hoạt động dựa trên Object. Object lưu trữ dữ liệu dưới dạng các cặp key-value (thuộc tính và phương thức hành động).",
+                features: [
+                    "<strong>Destructuring:</strong> Cú pháp phân rã thuộc tính object nhanh chóng, trực quan.",
+                    "<strong>Prototype Inheritance:</strong> Cơ chế kế thừa nguyên mẫu đặc thù của JS, giúp các object liên kết và sử dụng lại thuộc tính của nhau để tiết kiệm bộ nhớ."
+                ],
+                code: `// Khai báo một Object thông tin
+const person = {
+    fullName: "Nguyễn Ngọc Huỳnh Châu",
+    role: "Content Creator",
+    greet() {
+        return "Xin chào, tôi là " + this.fullName;
+    }
+};
+
+// Truy xuất thuộc tính nhanh (Destructuring)
+const { role, fullName } = person;
+
+console.log("Hành động greet():", person.greet());
+console.log("Trích xuất thuộc tính 'role':", role);`,
+                difficulty: "Trung bình",
+                popularity: "Bắt buộc nắm"
+            },
+            events: {
+                title: "Events (Quản lý Sự kiện)",
+                badge: "CONCEPTS",
+                subtitle: "Tương tác tương hỗ của trang",
+                desc: "Sự kiện (Event) là các tín hiệu phát ra bởi trình duyệt khi người dùng thực hiện một hành động nào đó, chẳng hạn như click chuột, cuộn trang, hoặc điền form.",
+                features: [
+                    "<strong>Event Listener:</strong> Hàm lắng nghe sự kiện, gắn vào các phần tử DOM để bắt tín hiệu click, submit, scroll,...",
+                    "<strong>Event Bubbling (Sự kiện nổi bọt):</strong> Khi một sự kiện diễn ra ở phần tử sâu nhất bên trong, nó sẽ lan truyền dần ngược lên tất cả các thẻ cha bao ngoài."
+                ],
+                code: `// Lắng nghe hành động nhấn nút từ một phần tử DOM giả định
+const connectBtn = document.querySelector('#btn-connect');
+
+connectBtn.addEventListener('click', (event) => {
+    event.preventDefault();
+    console.log("Sự kiện click đã kích hoạt thành công!");
+});`,
+                difficulty: "Trung bình",
+                popularity: "Cực kỳ quan trọng"
+            },
+            dom: {
+                title: "DOM (Document Object Model)",
+                badge: "CONCEPTS",
+                subtitle: "Cấu trúc hóa trang web hiển thị",
+                desc: "DOM là giao diện lập trình cho các tài liệu HTML. Trình duyệt chuyển các đoạn mã HTML thô thành một cấu trúc phân nhánh hình cây (DOM Tree), nơi JavaScript có thể dễ dàng can thiệp trực tiếp để cập nhật nội dung.",
+                features: [
+                    "<strong>Thao tác động:</strong> Cho phép JavaScript thêm, sửa, xóa bất kỳ phần tử, văn bản, hoặc style CSS nào mà không cần tải lại trang.",
+                    "<strong>Tra cứu linh hoạt:</strong> Các hàm tiện ích như <code>querySelector</code> hoặc <code>getElementById</code> hỗ trợ tìm kiếm phần tử nhanh chóng."
+                ],
+                code: `// Khởi tạo một phần tử mẫu và gán thuộc tính động
+const heading = document.querySelector('#main-heading');
+heading.textContent = "Chào mừng bạn đến với thế giới JS!";
+heading.classList.add('text-emerald-500');
+
+console.log("Nội dung mới của heading:", heading.textContent);`,
+                difficulty: "Trung bình",
+                popularity: "Học cốt lõi"
+            },
+            react: {
+                title: "React (Thư viện UI)",
+                badge: "LIBRARIES",
+                subtitle: "Phát triển giao diện component",
+                desc: "Được xây dựng bởi Facebook (nay là Meta), React là thư viện JavaScript phổ biến nhất hiện nay dành riêng cho việc thiết kế giao diện người dùng dựa trên thành phần độc lập (Component-based).",
+                features: [
+                    "<strong>Component-Based:</strong> Tách biệt giao diện thành các thành phần độc lập, dễ dàng tái sử dụng và kiểm thử.",
+                    "<strong>Virtual DOM:</strong> Cơ chế tối ưu cập nhật giao diện thông qua một bản sao ảo của cây DOM, chỉ cập nhật những gì thực sự thay đổi để tăng tốc độ hiển thị."
+                ],
+                code: `// Mô phỏng React Component đơn giản và State hook
+const useStateMock = (initialVal) => {
+    let state = initialVal;
+    const setState = (newVal) => { state = newVal; };
+    return [state, setState];
+};
+
+const [count, setCount] = useStateMock(0);
+console.log("Giá trị state khởi tạo của React:", count);
+setCount(1);
+console.log("React Component Render lần đầu thành công!");`,
+                difficulty: "Cao",
+                popularity: "Phổ biến số 1"
+            },
+            next: {
+                title: "Next.js (React Framework)",
+                badge: "FRAMEWORKS",
+                subtitle: "Giải pháp React chuẩn hóa Production",
+                desc: "Next.js là một Framework mạnh mẽ dành cho React, được phát triển bởi Vercel. Nó mang đến khả năng tối ưu hóa SEO vượt trội và nâng cao hiệu năng tải trang thông qua nhiều giải pháp render linh hoạt.",
+                features: [
+                    "<strong>Server-Side Rendering (SSR):</strong> Kết xuất dữ liệu trực tiếp trên máy chủ trước khi gửi về Client giúp SEO Google cực tốt.",
+                    "<strong>Static Site Generation (SSG):</strong> Tạo sẵn các trang HTML tĩnh tại thời điểm build trang, giúp tốc độ phản hồi trang đạt gần như lập tức."
+                ],
+                code: `// Mô phỏng hàm xử lý dữ liệu SSR trong Next.js
+async function getServerSideProps() {
+    console.log("Đang fetch dữ liệu an toàn trên Server side...");
+    const mockData = { id: 101, title: "Next.js 15 & React Server Components" };
+    return { props: mockData };
+}
+
+getServerSideProps().then(result => {
+    console.log("Dữ liệu đã nạp thành công:", result.props);
+});`,
+                difficulty: "Rất Cao",
+                popularity: "Tăng trưởng cực nhanh"
+            },
+            angular: {
+                title: "Angular (Full-featured Framework)",
+                badge: "FRAMEWORKS",
+                subtitle: "Hệ sinh thái ứng dụng doanh nghiệp",
+                desc: "Được hỗ trợ bởi Google, Angular là một khung kiến trúc toàn diện (Batteries-included). Nó đi kèm mọi tính năng cần có để phát triển một dự án quy mô lớn mà không cần lựa chọn thư viện bổ trợ bên ngoài.",
+                features: [
+                    "<strong>TypeScript làm chuẩn:</strong> Tận dụng thế mạnh của kiểu dữ liệu tĩnh mạnh mẽ, hạn chế lỗi code ngay từ giai đoạn viết lệnh.",
+                    "<strong>Two-way Data Binding:</strong> Cơ chế đồng bộ dữ liệu hai chiều tự động từ logic code ra giao diện và ngược lại một cách trực tiếp."
+                ],
+                code: `// Mô phỏng một Angular Class Component và gán thuộc tính
+class AppController {
+    constructor() {
+        this.title = "Ứng dụng Quản lý Doanh nghiệp";
+        this.employees = ["Châu", "Huy", "An"];
+    }
+    
+    addEmployee(name) {
+        this.employees.push(name);
+        console.log("Đã thêm thành viên:", name);
+    }
+}
+
+const app = new AppController();
+console.log("Tên ứng dụng Angular:", app.title);
+app.addEmployee("Trang");
+console.log("Danh sách nhân sự:", app.employees);`,
+                difficulty: "Rất Cao",
+                popularity: "Hệ thống doanh nghiệp"
+            },
+            vue: {
+                title: "Vue.js (Progressive Framework)",
+                badge: "FRAMEWORKS",
+                subtitle: "Khung phát triển giao diện linh hoạt",
+                desc: "Vue.js được thiết kế là một Framework lũy tiến, vô cùng dễ tiếp cận đối với người mới nhưng vẫn đầy đủ sức mạnh để xây dựng những hệ thống ứng dụng khổng lồ.",
+                features: [
+                    "<strong>Đường cong học tập dễ chịu:</strong> Cách viết tích hợp giữa HTML, CSS và JS trong cùng một file .vue cực kỳ trực quan.",
+                    "<strong>Composition API:</strong> Giải pháp tối tân của Vue 3 giúp nhóm và tái sử dụng logic cực kỳ hiệu quả tương đương React Hooks."
+                ],
+                code: `// Giả lập cơ chế Reactivity (Phản ứng dữ liệu) của Vue 3
+const refMock = (initial) => {
+    return {
+        _value: initial,
+        get value() { return this._value; },
+        set value(newVal) {
+            this._value = newVal;
+            console.log("Vue Reactive: Trạng thái trị vừa đổi sang ->", newVal);
+        }
+    };
+};
+
+const count = refMock(0);
+count.value++; // Tự động phát hiện thay đổi và kích hoạt console.log`,
+                difficulty: "Trung bình",
+                popularity: "Rất phổ biến"
+            },
+            jquery: {
+                title: "jQuery (Thư viện thao tác DOM)",
+                badge: "LIBRARIES",
+                subtitle: "Đơn giản hóa JS truyền thống",
+                desc: "Ra mắt từ năm 2006, jQuery từng là thư viện 'bất bại' giải quyết vấn đề bất tương thích API giữa các trình duyệt web khác nhau. Nó đơn giản hóa cách viết Javascript thuần thành những cú pháp siêu ngắn gọn.",
+                features: [
+                    "<strong>Thao tác DOM dễ dàng:</strong> Rút gọn mã tìm kiếm và sửa đổi giao diện chỉ bằng ký tự <code>$</code>.",
+                    "<strong>Bảo trì hệ thống cũ:</strong> Là nền tảng đi liền với WordPress và hàng triệu website cổ điển trên thế giới."
+                ],
+                code: `// Giả lập phương thức xâu chuỗi tiện ích (Chaining) nổi tiếng của jQuery
+const jQueryMock = (selector) => {
+    console.log("jQuery đã tìm thẻ:", selector);
+    return {
+        addClass: (className) => {
+            console.log("jQuery: Đã thêm class '" + className + "'");
+            return this;
+        },
+        fadeIn: () => {
+            console.log("jQuery: Đã kích hoạt hoạt ảnh fadeIn mượt mà!");
+        }
+    };
+};
+
+// Gọi thử theo cú pháp jQuery truyền thống
+jQueryMock(".info-box").addClass("active").fadeIn();`,
+                difficulty: "Dễ",
+                popularity: "Web cũ & WordPress"
+            }
+        };
+
+        let currentNodeKey = null;
+
+        // Hàm click chọn node trong Mindmap hoặc Danh sách
+        function selectNode(key) {
+            currentNodeKey = key;
+            const data = nodesData[key];
+            if (!data) return;
+
+            // Đóng màn hình kết quả chạy code cũ cho gọn gàng
+            clearConsole();
+
+            // Hiển thị panel chi tiết
+            document.getElementById('defaultDetailState').classList.add('hidden');
+            const activeState = document.getElementById('activeDetailState');
+            activeState.classList.remove('hidden');
+
+            // Cập nhật nội dung chi tiết
+            document.getElementById('detailTitle').textContent = data.title;
+            document.getElementById('detailSubtitle').textContent = data.subtitle;
+            document.getElementById('detailDesc').textContent = data.desc;
+            document.getElementById('codeBlock').innerHTML = escapeHTML(data.code);
+
+            // Cập nhật badge loại
+            const badge = document.getElementById('detailBadge');
+            badge.textContent = data.badge;
+            if (data.badge === 'CONCEPTS') {
+                badge.className = "text-[10px] uppercase font-bold tracking-widest bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2.5 py-1 rounded-full";
+            } else {
+                badge.className = "text-[10px] uppercase font-bold tracking-widest bg-sky-500/10 text-sky-400 border border-sky-500/20 px-2.5 py-1 rounded-full";
+            }
+
+            // Hiển thị các tính năng cốt lõi
+            const featuresBlock = document.getElementById('featuresBlock');
+            const featuresList = document.getElementById('featuresList');
+            featuresList.innerHTML = '';
+            if (data.features && data.features.length > 0) {
+                featuresBlock.classList.remove('hidden');
+                data.features.forEach(feat => {
+                    const li = document.createElement('li');
+                    li.className = "flex items-start space-x-2";
+                    li.innerHTML = `<span class="text-emerald-500 mt-0.5">•</span> <span>${feat}</span>`;
+                    featuresList.appendChild(li);
+                });
+            } else {
+                featuresBlock.classList.add('hidden');
+            }
+
+            // Cập nhật thống kê độ khó
+            const statsContainer = document.getElementById('techStats');
+            statsContainer.innerHTML = `
+                <div class="text-right">
+                    <span class="text-[10px] text-slate-500 block uppercase font-semibold">Mức độ</span>
+                    <span class="text-xs text-slate-300 font-bold">${data.difficulty}</span>
+                </div>
+                <div class="h-6 w-px bg-slate-800 self-center"></div>
+                <div class="text-right">
+                    <span class="text-[10px] text-slate-500 block uppercase font-semibold">Tần suất dùng</span>
+                    <span class="text-xs text-emerald-400 font-bold">${data.popularity}</span>
+                </div>
+            `;
+
+            // Làm nổi bật node được chọn trên sơ đồ hình ảnh
+            highlightActiveNodeInMindmap(key);
+            // Làm nổi bật nút trong tab selector
+            highlightActiveNodeInTabs(key);
+
+            // Cuộn mượt đến phần xem chi tiết nếu người dùng click trên sơ đồ màn hình nhỏ
+            if (window.innerWidth < 1024) {
+                document.getElementById('explorer').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Làm nổi bật Node được lựa chọn trong sơ đồ
+        function highlightActiveNodeInMindmap(key) {
+            // Reset tất cả nút
+            const allButtons = document.querySelectorAll('#conceptsList button, #frameworksList button');
+            allButtons.forEach(btn => {
+                btn.className = "w-full text-left bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-emerald-500/50 p-3.5 rounded-xl transition-all duration-300 flex justify-between items-center group";
+            });
+
+            // Gắn class active cho phần tử được chọn
+            const activeBtn = document.getElementById(`node-${key}`);
+            if (activeBtn) {
+                activeBtn.className = "w-full text-left bg-slate-800/80 border-2 border-emerald-500 p-3.5 rounded-xl shadow-lg glow-green flex justify-between items-center group";
+            }
+        }
+
+        // Làm nổi bật nút trong bảng điều hướng Tabs bên trái
+        function highlightActiveNodeInTabs(key) {
+            const allTabBtns = document.querySelectorAll('.quick-btn');
+            allTabBtns.forEach(btn => {
+                btn.classList.remove('bg-emerald-500/10', 'text-emerald-400', 'font-bold', 'border-l-2', 'border-emerald-500', 'pl-2');
+                btn.classList.add('text-slate-300');
+            });
+
+            const activeTabBtn = document.querySelector(`.quick-btn[data-node="${key}"]`);
+            if (activeTabBtn) {
+                activeTabBtn.classList.remove('text-slate-300');
+                activeTabBtn.classList.add('bg-emerald-500/10', 'text-emerald-400', 'font-bold', 'border-l-2', 'border-emerald-500', 'pl-2');
+                
+                // Tự động chuyển tab nếu node nằm trong tab đang ẩn
+                const isConcept = nodesData[key].badge === 'CONCEPTS';
+                if (isConcept) {
+                    switchTab('tab-concepts');
+                } else {
+                    switchTab('tab-tools');
+                }
+            }
+        }
+
+        // Chuyển đổi qua lại giữa tab Concepts và Frameworks
+        function switchTab(tabId) {
+            document.getElementById('tab-concepts').classList.add('hidden');
+            document.getElementById('tab-tools').classList.add('hidden');
+            document.getElementById('btn-tab-concepts').className = "flex-1 pb-3 text-sm font-semibold text-slate-400 hover:text-white border-b-2 border-transparent";
+            document.getElementById('btn-tab-tools').className = "flex-1 pb-3 text-sm font-semibold text-slate-400 hover:text-white border-b-2 border-transparent";
+
+            document.getElementById(tabId).classList.remove('hidden');
+            if (tabId === 'tab-concepts') {
+                document.getElementById('btn-tab-concepts').className = "flex-1 pb-3 text-sm font-semibold text-emerald-400 border-b-2 border-emerald-500";
+            } else {
+                document.getElementById('btn-tab-tools').className = "flex-1 pb-3 text-sm font-semibold text-emerald-400 border-b-2 border-emerald-500";
+            }
+        }
+
+        // Tránh lỗi bảo mật khi chèn mã nguồn vào HTML
+        function escapeHTML(str) {
+            return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+        }
+
+        // Thần tốc thực thi JavaScript an toàn và ghi nhận Log vào màn hình Console mô phỏng
+        function runCurrentCode() {
+            if (!currentNodeKey) return;
+            const code = nodesData[currentNodeKey].code;
+            const outputConsole = document.getElementById('consoleOutput');
+            const outputBlock = document.getElementById('consoleOutputBlock');
+            
+            outputConsole.classList.remove('hidden');
+            outputBlock.innerHTML = '';
+            
+            let logs = [];
+            const customConsole = {
+                log: (...args) => {
+                    logs.push(args.map(arg => {
+                        if (typeof arg === 'object') return JSON.stringify(arg, null, 2);
+                        return String(arg);
+                    }).join(' '));
+                },
+                error: (...args) => {
+                    logs.push('[ERR] ' + args.join(' '));
+                },
+                warn: (...args) => {
+                    logs.push('[WARN] ' + args.join(' '));
+                }
+            };
+            
+            try {
+                // Tạo một hàm chứa code chạy thử, đưa context console của chúng ta vào và chạy
+                const runner = new Function('console', 'document', code);
+                
+                // Tạo một DOM Mock an toàn tránh gây lỗi runtime hoặc thay đổi cấu trúc website thật
+                const mockDocument = {
+                    querySelector: (selector) => {
+                        logs.push(`[DOM Mock] Đã bắt thành công thẻ với Selector: "${selector}"`);
+                        return {
+                            textContent: 'Chào mừng bạn đến với thế giới JS!',
+                            style: {},
+                            classList: {
+                                add: (...classes) => logs.push(`[DOM Mock] -> Đã thêm lớp CSS mới: ${classes.join(', ')}`),
+                                remove: (...classes) => logs.push(`[DOM Mock] -> Đã gỡ lớp CSS: ${classes.join(', ')}`)
+                            },
+                            addEventListener: (event, cb) => {
+                                logs.push(`[DOM Mock] -> Gán thành công bộ lắng nghe sự kiện: "${event}"`);
+                                logs.push(`[DOM Mock] -> [Tự động Kích hoạt Sự Kiện để kiểm thử]:`);
+                                try {
+                                    cb({ preventDefault: () => {} });
+                                } catch(e) {
+                                    logs.push(`[DOM Mock Error] Callback bị lỗi: ${e.message}`);
+                                }
+                            }
+                        };
+                    },
+                    getElementById: (id) => mockDocument.querySelector(`#${id}`)
+                };
+                
+                runner(customConsole, mockDocument);
+                
+                if (logs.length === 0) {
+                    outputBlock.innerHTML = '<span class="text-slate-500">// Đoạn mã chạy thành công tốt đẹp nhưng không trả ra lệnh in log nào.</span>';
+                } else {
+                    outputBlock.innerHTML = logs.map(log => escapeHTML(log)).join('\n');
+                }
+            } catch (err) {
+                outputBlock.innerHTML = `<span class="text-red-400 font-bold">Lỗi Biên Dịch / Thực Thi: ${escapeHTML(err.message)}</span>`;
+            }
+        }
+
+        // Dọn dẹp bảng Log Console
+        function clearConsole() {
+            const outputConsole = document.getElementById('consoleOutput');
+            const outputBlock = document.getElementById('consoleOutputBlock');
+            if (outputConsole && outputBlock) {
+                outputConsole.classList.add('hidden');
+                outputBlock.innerHTML = '';
+            }
+        }
+
+        // Sao chép mã nguồn của phần tử hiện tại vào bộ nhớ tạm
+        function copyCurrentCode() {
+            if (!currentNodeKey) return;
+            const code = nodesData[currentNodeKey].code;
+            
+            const dummy = document.createElement("textarea");
+            document.body.appendChild(dummy);
+            dummy.value = code;
+            dummy.select();
+            document.execCommand("copy");
+            document.body.removeChild(dummy);
+            
+            // Hiển thị toast thông báo
+            const toast = document.getElementById("toast");
+            toast.classList.remove("opacity-0", "pointer-events-none");
+            toast.classList.add("opacity-100");
+            
+            setTimeout(() => {
+                toast.classList.remove("opacity-100");
+                toast.classList.add("opacity-0", "pointer-events-none");
+            }, 2500);
+        }
+
+        // Tìm kiếm nhanh trong toàn bộ dữ liệu
+        function searchEcosystem() {
+            const query = document.getElementById('searchInput').value.trim().toLowerCase();
+            const clearBtn = document.getElementById('searchClear');
+
+            if (query.length > 0) {
+                clearBtn.classList.remove('hidden');
+                
+                // Lọc trong danh sách sơ đồ
+                for (const key in nodesData) {
+                    const node = nodesData[key];
+                    const matched = node.title.toLowerCase().includes(query) || 
+                                    node.desc.toLowerCase().includes(query) || 
+                                    key.toLowerCase().includes(query);
+                    
+                    const mapBtn = document.getElementById(`node-${key}`);
+                    if (mapBtn) {
+                        if (matched) {
+                            mapBtn.classList.remove('opacity-30');
+                            mapBtn.classList.add('border-emerald-500/45');
+                        } else {
+                            mapBtn.classList.add('opacity-30');
+                            mapBtn.classList.remove('border-emerald-500/45');
+                        }
+                    }
+                }
+            } else {
+                clearSearch();
+            }
+        }
+
+        function clearSearch() {
+            document.getElementById('searchInput').value = '';
+            document.getElementById('searchClear').classList.add('hidden');
+            
+            // Khôi phục hiển thị sơ đồ ban đầu
+            for (const key in nodesData) {
+                const mapBtn = document.getElementById(`node-${key}`);
+                if (mapBtn) {
+                    mapBtn.classList.remove('opacity-30', 'border-emerald-500/45');
+                }
+            }
+        }
+
+
+        // Cấu trúc dữ liệu Quiz học tập
+        const quizQuestions = [
+            {
+                question: "Cơ chế nào của Javascript tạo một cây phân nhánh đại diện cho tài liệu HTML để chỉnh sửa các phần tử trực tiếp?",
+                options: ["Event Bubbling", "DOM (Document Object Model)", "TypeScript API", "Virtual Machine V8"],
+                answer: 1, // Vị trí của câu trả lời chính xác
+                explain: "DOM tạo ra cây tài liệu phân nhánh để JS can thiệp và biến đổi mã giao diện nhanh chóng."
+            },
+            {
+                question: "Sự khác biệt lớn nhất giúp Next.js giải quyết điểm yếu của React thông thường trong SEO là gì?",
+                options: [
+                    "Hỗ trợ kết xuất Server-Side Rendering (SSR) & SSG", 
+                    "Không dùng JavaScript nữa", 
+                    "Chỉ tối ưu được trên máy tính bảng", 
+                    "Chạy trực tiếp trong hệ điều hành"
+                ],
+                answer: 0,
+                explain: "Nhờ kết xuất trực tiếp tại máy chủ (SSR), robot tìm kiếm Google dễ dàng thu thập và đánh chỉ mục trang Next.js."
+            },
+            {
+                question: "Phương thức xử lý mảng nâng cao nào giúp lọc ra các phần tử thỏa mãn điều kiện nhất định?",
+                options: [".reduce()", ".map()", ".filter()", ".pop()"],
+                answer: 2,
+                explain: ".filter() lọc các giá trị trong mảng thỏa mãn điều kiện, trả về một mảng hoàn toàn mới."
+            },
+            {
+                question: "Hệ sinh thái nào được Google hậu thuẫn mạnh mẽ, tích hợp sẵn mọi công cụ (Router, HTTP) và viết mặc định bằng TypeScript?",
+                options: ["jQuery", "Angular", "Vue.js", "React.js"],
+                answer: 1,
+                explain: "Angular là Framework chuẩn hóa toàn vẹn nhất phù hợp tuyệt đối cho dự án cấp doanh nghiệp lớn."
+            }
+        ];
+
+        let currentQuizIndex = 0;
+        let userScore = 0;
+        let isAnswered = false;
+
+        // Bắt đầu hoặc thiết lập lại Quiz
+        function loadQuizQuestion() {
+            isAnswered = false;
+            const qData = quizQuestions[currentQuizIndex];
+            
+            // Cập nhật thanh tiến trình (progress)
+            const pct = ((currentQuizIndex + 1) / quizQuestions.length) * 100;
+            document.getElementById('quizProgress').style.width = `${pct}%`;
+            
+            // Cập nhật nội dung câu hỏi
+            document.getElementById('questionNum').textContent = `Câu hỏi ${currentQuizIndex + 1} / ${quizQuestions.length}`;
+            document.getElementById('scoreText').textContent = `Điểm: ${userScore}`;
+            document.getElementById('questionText').textContent = qData.question;
+            
+            // Render các đáp án lựa chọn
+            const optionsGrid = document.getElementById('optionsGrid');
+            optionsGrid.innerHTML = '';
+            
+            qData.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = "w-full text-left bg-slate-950 hover:bg-slate-800 border border-slate-800 p-4 rounded-xl text-slate-300 text-sm transition-all focus:outline-none flex items-center justify-between group";
+                btn.innerHTML = `
+                    <span>${opt}</span>
+                    <i class="fa-regular fa-circle text-slate-600 group-hover:text-emerald-400 text-xs"></i>
+                `;
+                btn.onclick = () => submitAnswer(idx, btn);
+                optionsGrid.appendChild(btn);
+            });
+        }
+
+        // Xử lý nộp câu trả lời
+        function submitAnswer(selectedIndex, selectedBtn) {
+            if (isAnswered) return;
+            isAnswered = true;
+            
+            const qData = quizQuestions[currentQuizIndex];
+            const correctIndex = qData.answer;
+            const optionsGrid = document.getElementById('optionsGrid');
+            const buttons = optionsGrid.querySelectorAll('button');
+
+            buttons.forEach((btn, idx) => {
+                btn.onclick = null; // Vô hiệu hóa click lại
+                
+                // Làm nổi bật câu trả lời chính xác
+                if (idx === correctIndex) {
+                    btn.className = "w-full text-left bg-emerald-500/10 border-2 border-emerald-500 p-4 rounded-xl text-emerald-400 text-sm font-semibold flex items-center justify-between";
+                    btn.innerHTML = `<span>${qData.options[idx]}</span> <i class="fa-solid fa-circle-check text-emerald-500 text-sm"></i>`;
+                } else if (idx === selectedIndex && selectedIndex !== correctIndex) {
+                    // Nếu người dùng chọn sai
+                    btn.className = "w-full text-left bg-red-500/10 border-2 border-red-500 p-4 rounded-xl text-red-400 text-sm flex items-center justify-between";
+                    btn.innerHTML = `<span>${qData.options[idx]}</span> <i class="fa-solid fa-circle-xmark text-red-500 text-sm"></i>`;
+                } else {
+                    btn.className = "w-full text-left bg-slate-950/40 border border-slate-900 p-4 rounded-xl text-slate-600 text-sm flex items-center justify-between opacity-50";
+                }
+            });
+
+            if (selectedIndex === correctIndex) {
+                userScore++;
+                document.getElementById('scoreText').textContent = `Điểm: ${userScore}`;
+            }
+
+            // Tạo nút chuyển tiếp sang câu hỏi sau
+            const nextBtn = document.createElement('button');
+            nextBtn.className = "w-full mt-4 py-3 bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold rounded-xl text-sm transition-all shadow-lg shadow-emerald-500/10 active:scale-95";
+            nextBtn.textContent = currentQuizIndex < quizQuestions.length - 1 ? "Câu tiếp theo" : "Xem kết quả chung cuộc";
+            nextBtn.onclick = () => {
+                if (currentQuizIndex < quizQuestions.length - 1) {
+                    currentQuizIndex++;
+                    loadQuizQuestion();
+                } else {
+                    showQuizResults();
+                }
+            };
+            optionsGrid.appendChild(nextBtn);
+        }
+
+        // Hiển thị kết quả sau khi hoàn thành toàn bộ bài Quiz
+        function showQuizResults() {
+            document.getElementById('quizBox').classList.add('hidden');
+            const resultBox = document.getElementById('resultBox');
+            resultBox.classList.remove('hidden');
+
+            document.getElementById('finalScore').textContent = `${userScore} / ${quizQuestions.length}`;
+            
+            // Thông điệp kết quả dựa trên số câu trả lời đúng
+            const msgEl = document.getElementById('resultMessage');
+            if (userScore === quizQuestions.length) {
+                msgEl.textContent = "Xuất sắc! Bạn xứng đáng là chuyên gia JavaScript thế hệ mới. Nắm cực vững kiến thức cốt lõi và các khung phát triển.";
+            } else if (userScore >= 2) {
+                msgEl.textContent = "Khá tốt! Bạn đã có những kiến thức cơ bản tốt về các công cụ và khái niệm. Hãy tiếp tục trau dồi để nắm chắc hơn nữa.";
+            } else {
+                msgEl.textContent = "Bạn cần ôn tập thêm. Hãy click lại vào Sơ đồ để nghiên cứu thêm các khái niệm cơ bản và tính năng của các thư viện nhé.";
+            }
+        }
+
+        // Reset game trắc nghiệm từ đầu
+        function restartQuiz() {
+            currentQuizIndex = 0;
+            userScore = 0;
+            document.getElementById('resultBox').classList.add('hidden');
+            document.getElementById('quizBox').classList.remove('hidden');
+            loadQuizQuestion();
+        }
+
+        // Tự động khởi chạy khi trang web tải xong
+        window.onload = function() {
+            // Chọn ngẫu nhiên mặc định xem trước khái niệm 'introduction'
+            selectNode('introduction');
+            // Khởi chạy câu hỏi trắc nghiệm đầu tiên
+            loadQuizQuestion();
+        }
+    </script>
+</body>
+</html>
